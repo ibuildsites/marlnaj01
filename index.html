@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marnaj - takaful car protection</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .text-marlnaj-primary {
+            color: #3f6969;
+        }
+        .bg-marlnaj-primary {
+            background-color: #3f6969;
+        }
+        .border-marlnaj-primary {
+            border-color: #3f6969;
+        }
+        h1, h2, h3, h4, h5, h6, .lowercase-text {
+            text-transform: lowercase;
+        }
+        /* Custom typing effect cursor */
+        .type-cursor {
+            border-right: 2px solid;
+            animation: blink 0.75s infinite;
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Animated radial gradient for hero section */
+        .bg-animated-gradient {
+            background-image: radial-gradient(at 0% 0%, #4a7a7a, #3f6969);
+            background-size: 200% 200%;
+            animation: moveGradient 10s linear infinite alternate;
+        }
+        @keyframes moveGradient {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+    </style>
+    <link rel="icon" href="https://i.ibb.co/NQq95DJ/MARLNAJ-M.png" type="image/png">
+</head>
+<body class="bg-gray-100 antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo with image -->
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="https://i.ibb.co/NQq95DJ/MARLNAJ-M.png" alt="marlnaj logo" class="h-8 w-auto">
+                <span class="text-3xl font-bold lowercase-text text-marlnaj-primary">marlnaj</span>
+            </a>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="lang-toggle-mobile" class="lowercase-text text-sm font-medium text-gray-600 hover:text-marlnaj-primary focus:outline-none">
+                    EN / AR
+                </button>
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Desktop navigation links -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="lowercase-text text-gray-600 hover:text-marlnaj-primary transition duration-300" data-lang-key="nav-home">home</a>
+                <a href="#about" class="lowercase-text text-gray-600 hover:text-marlnaj-primary transition duration-300" data-lang-key="nav-how-it-works">how it works</a>
+                <a href="#values" class="lowercase-text text-gray-600 hover:text-marlnaj-primary transition duration-300" data-lang-key="nav-our-values">our values</a>
+                <button id="lang-toggle-desktop" class="lowercase-text px-4 py-2 rounded-full border border-marlnaj-primary text-marlnaj-primary font-medium hover:bg-marlnaj-primary hover:text-white transition duration-300">
+                    EN / AR
+                </button>
+                <a href="#contact" class="lowercase-text px-6 py-2 rounded-full bg-marlnaj-primary text-white font-medium hover:bg-opacity-80 transition duration-300" data-lang-key="nav-get-started">get started</a>
+            </div>
+        </nav>
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 text-center shadow-inner">
+            <a href="#home" class="lowercase-text block py-2 text-gray-600 hover:text-marlnaj-primary" data-lang-key="nav-home">home</a>
+            <a href="#about" class="lowercase-text block py-2 text-gray-600 hover:text-marlnaj-primary" data-lang-key="nav-how-it-works">how it works</a>
+            <a href="#values" class="lowercase-text block py-2 text-gray-600 hover:text-marlnaj-primary" data-lang-key="nav-our-values">our values</a>
+            <a href="#contact" class="lowercase-text block py-2 mt-2 px-4 rounded-full bg-marlnaj-primary text-white hover:bg-opacity-80" data-lang-key="nav-get-started">get started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-animated-gradient text-white py-24 md:py-32 flex items-center justify-center">
+        <div class="container mx-auto text-center px-6">
+            <h1 id="tagline-english" class="text-4xl md:text-6xl font-bold lowercase-text leading-tight tracking-tighter mb-4"></h1>
+            <h2 id="tagline-arabic" class="text-3xl font-bold lowercase-text tracking-tighter mb-4 text-white opacity-0"></h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 font-light lowercase-text" data-lang-key="hero-subtitle">
+                a takaful-compliant car protection platform that merges modern technology with cooperative finance principles.
+            </p>
+            <a href="#about" class="lowercase-text px-8 py-4 rounded-full bg-white text-marlnaj-primary font-bold text-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105" data-lang-key="hero-learn-more">
+                learn more
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="about" class="py-20 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold lowercase-text text-center mb-4 text-marlnaj-primary" data-lang-key="hiw-title">how it works</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto lowercase-text" data-lang-key="hiw-subtitle">
+                marlnaj is more than insurance. it's a fair, tech-first community that puts you in control.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/100x100/3f6969/ffffff?text=1" alt="Step 1" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 lowercase-text text-marlnaj-primary" data-lang-key="hiw-step1-title">you pay a flat fee</h3>
+                    <p class="text-gray-600 lowercase-text" data-lang-key="hiw-step1-text">
+                        your monthly payment is split between a shared risk pool for community coverage and a personal savings account.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/100x100/3f6969/ffffff?text=2" alt="Step 2" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 lowercase-text text-marlnaj-primary" data-lang-key="hiw-step2-title">your fund grows</h3>
+                    <p class="text-gray-600 lowercase-text" data-lang-key="hiw-step2-text">
+                        your personal repair fund builds over time. we reward safe driving with bonuses and rewards.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/100x100/3f6969/ffffff?text=3" alt="Step 3" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 lowercase-text text-marlnaj-primary" data-lang-key="hiw-step3-title">achieve independence</h3>
+                    <p class="text-gray-600 lowercase-text" data-lang-key="hiw-step3-text">
+                        once your personal fund equals your car's value, you can opt out of the risk pool and rely solely on your own funds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="values" class="bg-gray-50 py-20 md:py-24">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <img src="https://i.ibb.co/bg7Cc3v2/HASSAN-IMAGE-marlanaj.jpg" alt="HASSAN-IMAGE-marlanaj" class="rounded-lg shadow-xl mb-6">
+                <h3 class="text-2xl font-bold mb-2 lowercase-text text-marlnaj-primary" data-lang-key="values-title1">it just works.</h3>
+                <p class="text-gray-600 leading-relaxed lowercase-text" data-lang-key="values-text1">
+                    our goal is to make sure you know it. we process all minor claims in under 48 hours. this isn't just a promise; it's our reputation.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <img src="https://i.ibb.co/ZRp2VDg2/Untitled-video-Made-with-Clipchamp.gif" alt="Untitled-video-Made-with-Clipchamp" class="rounded-lg shadow-xl mb-6">
+                <h3 class="text-2xl font-bold mb-2 lowercase-text text-marlnaj-primary" data-lang-key="values-title2">no surprises. ever.</h3>
+                <p class="text-gray-600 leading-relaxed lowercase-text" data-lang-key="values-text2">
+                    you'll always know exactly where your money is going. we keep our fees transparent so you feel like a valued member of a fair community, not just a customer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold lowercase-text text-center mb-4 text-marlnaj-primary" data-lang-key="contact-title">get started</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto lowercase-text" data-lang-key="contact-subtitle">
+                leave your details below and we'll be in touch.
+            </p>
+            <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="fullname" class="block text-sm font-medium text-gray-700 lowercase-text" data-lang-key="contact-name-label">full name</label>
+                        <input type="text" id="fullname" name="fullname" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-marlnaj-primary focus:ring-marlnaj-primary" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 lowercase-text" data-lang-key="contact-phone-label">phone number</label>
+                        <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-marlnaj-primary focus:ring-marlnaj-primary" required>
+                    </div>
+                    <button type="submit" class="w-full py-3 px-4 rounded-full bg-marlnaj-primary text-white font-medium hover:bg-opacity-80 transition duration-300 lowercase-text" data-lang-key="contact-send-button">send</button>
+                    <div id="form-status" class="mt-4 text-center text-sm"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="lowercase-text" data-lang-key="footer-copyright">&copy; 2025 marnaj. all rights reserved.</p>
+            <p class="text-sm mt-2 lowercase-text" data-lang-key="footer-founder">a nikita suzuki company.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <!-- Facebook Icon -->
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.588-1.333h2.412v-3.996c-.66.002-2.827-.22-4.104-.158-2.31 0-3.41 1.05-3.41 3.327v2.24z"></path>
+                    </svg>
+                </a>
+                <!-- Twitter Icon -->
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.179-1.55-3.62-1.55-3.593 0-6.494 2.901-6.494 6.493 0 .509.057 1.001.166 1.478-5.394-.27-10.176-2.859-13.37-6.784-.561.961-.886 2.085-.886 3.284 0 2.253 1.143 4.242 2.885 5.407-.847-.026-1.649-.26-2.35-.646v.079c0 3.141 2.23 5.765 5.19 6.368-.544.148-1.116.227-1.705.227-.417 0-.82-.041-1.215-.117.825 2.572 3.203 4.45 6.031 4.502-2.196 1.719-4.965 2.744-7.989 2.744-.52 0-1.03-.03-1.53-.09.845 2.658 3.313 4.524 6.228 4.524 7.472 0 11.555-6.195 11.555-11.556 0-.177-.005-.353-.012-.529.799-.578 1.493-1.29 2.043-2.106z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'en': {
+                'tagline-english': 'drive. protect. belong.',
+                'tagline-arabic': 'قيادة. حماية. انتماء.',
+                'hero-subtitle': 'a takaful-compliant car protection platform that merges modern technology with cooperative finance principles.',
+                'hero-learn-more': 'learn more',
+                'nav-home': 'home',
+                'nav-how-it-works': 'how it works',
+                'nav-our-values': 'our values',
+                'nav-get-started': 'get started',
+                'hiw-title': 'how it works',
+                'hiw-subtitle': 'marlnaj is more than insurance. it\'s a fair, tech-first community that puts you in control.',
+                'hiw-step1-title': 'you pay a flat fee',
+                'hiw-step1-text': 'your monthly payment is split between a shared risk pool for community coverage and a personal savings account.',
+                'hiw-step2-title': 'your fund grows',
+                'hiw-step2-text': 'your personal repair fund builds over time. we reward safe driving with bonuses and rewards.',
+                'hiw-step3-title': 'achieve independence',
+                'hiw-step3-text': 'once your personal fund equals your car\'s value, you can opt out of the risk pool and rely solely on your own funds.',
+                'values-title1': 'it just works.',
+                'values-text1': 'our goal is to make sure you know it. we process all minor claims in under 48 hours. this isn\'t just a promise; it\'s our reputation.',
+                'values-title2': 'no surprises. ever.',
+                'values-text2': 'you\'ll always know exactly where your money is going. we keep our fees transparent so you feel like a valued member of a fair community, not just a customer.',
+                'contact-title': 'get started',
+                'contact-subtitle': 'leave your details below and we\'ll be in touch.',
+                'contact-name-label': 'full name',
+                'contact-phone-label': 'phone number',
+                'contact-send-button': 'send',
+                'footer-copyright': '® 2025 marlnaj. All Rights Reserved.',
+                'footer-founder': 'a nikita suzuki company.'
+            },
+            'ar': {
+                'tagline-english': 'قيادة. حماية. انتماء.',
+                'tagline-arabic': 'drive. protect. belong.',
+                'hero-subtitle': 'منصة تأمين سيارات متوافقة مع أحكام التكافل تجمع بين التكنولوجيا الحديثة ومبادئ التمويل التعاوني.',
+                'hero-learn-more': 'تعلم المزيد',
+                'nav-home': 'الرئيسية',
+                'nav-how-it-works': 'كيف يعمل',
+                'nav-our-values': 'قيمنا',
+                'nav-get-started': 'ابدأ الآن',
+                'hiw-title': 'كيف يعمل',
+                'hiw-subtitle': 'مَرْلَنَج أكثر من مجرد تأمين. إنه مجتمع عادل وتكنولوجي يمنحك السيطرة الكاملة.',
+                'hiw-step1-title': 'تدفع رسومًا ثابتة',
+                'hiw-step1-text': 'يتم تقسيم دفعتك الشهرية بين مجمع المخاطر المشترك للتغطية الجماعية وحساب توفير شخصي.',
+                'hiw-step2-title': 'صندوقك ينمو',
+                'hiw-step2-text': 'ينمو صندوق إصلاحك الشخصي مع مرور الوقت. نحن نكافئ السائقين الآمنين بمكافآت وحوافز.',
+                'hiw-step3-title': 'تحقيق الاستقلالية',
+                'hiw-step3-text': 'بمجرد أن يصل صندوقك الشخصي إلى قيمة سيارتك، يمكنك التوقف عن الدفع لمجمع المخاطر والاعتماد كلياً على أموالك الخاصة للتغطية.',
+                'values-title1': 'يعمل ببساطة.',
+                'values-text1': 'هدفنا هو أن تتأكد من ذلك. نقوم بمعالجة جميع المطالبات البسيطة في أقل من 48 ساعة. هذا ليس مجرد وعد؛ إنها سمعتنا.',
+                'values-title2': 'لا مفاجآت. أبداً.',
+                'values-text2': 'ستعرف دائماً أين تذهب أموالك بالضبط. نحافظ على شفافية رسومنا لتشعر أنك جزء من مجتمع عادل، وليس مجرد عميل آخر.',
+                'contact-title': 'ابدأ الآن',
+                'contact-subtitle': 'اترك تفاصيلك أدناه وسنتواصل معك.',
+                'contact-name-label': 'الاسم الكامل',
+                'contact-phone-label': 'رقم الهاتف',
+                'contact-send-button': 'إرسال',
+                'footer-copyright': '® 2025 marlnaj. All Rights Reserved.',
+                'footer-founder': 'شركة لنيكيتا سوزوكي.'
+            }
+        };
+
+        let currentLang = 'en';
+
+        // Get all translatable elements
+        const translatableElements = document.querySelectorAll('[data-lang-key]');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const langToggleDesktop = document.getElementById('lang-toggle-desktop');
+        const langToggleMobile = document.getElementById('lang-toggle-mobile');
+
+        // Function to update all text on the page
+        const updateLanguage = (lang) => {
+            currentLang = lang;
+            document.documentElement.lang = lang; // Set HTML lang attribute
+
+            translatableElements.forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Handle hero section taglines separately for animations
+            const taglineEnglish = document.getElementById('tagline-english');
+            const taglineArabic = document.getElementById('tagline-arabic');
+
+            if (lang === 'en') {
+                taglineEnglish.textContent = translations.en['tagline-english'];
+                taglineArabic.textContent = translations.en['tagline-arabic'];
+                taglineArabic.classList.remove('fade-in');
+            } else {
+                taglineEnglish.textContent = translations.ar['tagline-english'];
+                taglineArabic.textContent = translations.ar['tagline-arabic'];
+                taglineEnglish.style.opacity = 1;
+                taglineArabic.classList.add('fade-in');
+            }
+        };
+
+        // Event listeners for language toggles
+        if (langToggleDesktop) {
+            langToggleDesktop.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ar' : 'en';
+                updateLanguage(currentLang);
+            });
+        }
+        if (langToggleMobile) {
+            langToggleMobile.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ar' : 'en';
+                updateLanguage(currentLang);
+            });
+        }
+
+        // Mobile menu toggle functionality
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // JavaScript for typing effect on initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            const taglineEnglish = document.getElementById('tagline-english');
+            const taglineArabic = document.getElementById('tagline-arabic');
+
+            // Type English tagline first
+            typeText(taglineEnglish, translations.en['tagline-english'], () => {
+                // After English tagline is typed, fade in Arabic text
+                taglineArabic.textContent = translations.en['tagline-arabic'];
+                taglineArabic.classList.add('fade-in');
+            });
+
+            // Function to handle the typing effect
+            function typeText(element, text, callback) {
+                let i = 0;
+                element.innerHTML = "";
+                const cursor = document.createElement('span');
+                cursor.className = 'type-cursor';
+                element.appendChild(cursor);
+
+                const typing = setInterval(() => {
+                    if (i < text.length) {
+                        element.innerHTML = text.substring(0, i + 1) + '<span class="type-cursor"></span>';
+                        i++;
+                    } else {
+                        clearInterval(typing);
+                        const finalCursor = element.querySelector('.type-cursor');
+                        if (finalCursor) finalCursor.style.borderRightColor = 'transparent';
+                        if (callback) {
+                            setTimeout(callback, 500); // Small delay before fading in the next line
+                        }
+                    }
+                }, 100); // Typing speed in milliseconds
+            }
+        });
+
+        // Handle contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                // Log the form data to the console for demonstration
+                console.log('Form submitted:', data);
+
+                // Display a success message
+                formStatus.textContent = translations[currentLang]['form-status-success'] || 'thank you! we will be in touch shortly.';
+                formStatus.classList.add('text-green-600');
+                formStatus.classList.remove('text-red-600');
+
+                // Clear the form fields
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
